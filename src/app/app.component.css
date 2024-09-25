@@ -1,0 +1,15 @@
+ul {
+    list-style-type: none;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[disabled] {
+    cursor: not-allowed;
+  }
+  

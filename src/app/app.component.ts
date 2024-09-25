@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgFor, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
+  standalone: true,  // Marcar o componente como standalone
+  imports: [NgFor, NgStyle],  // Importar as diretivas necessárias
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tarefa';
+  tarefas = [
+    { descricao: 'Estudar Angular', concluida: false },
+    { descricao: 'Fazer compras', concluida: true },
+    { descricao: 'Lavar o carro', concluida: false },
+    { descricao: 'Preparar o jantar', concluida: true },
+    { descricao: 'Terminar o projeto', concluida: false }
+  ];
+
+  alternarConclusao(tarefa: any) {
+    tarefa.concluida = !tarefa.concluida;
+  }
 }

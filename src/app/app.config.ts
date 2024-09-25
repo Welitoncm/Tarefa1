@@ -1,9 +1,10 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, Routes } from '@angular/router';
+import { AppComponent } from './app.component'; // Ajuste o caminho conforme necessário
 
-import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+const routes: Routes = [
+  { path: '', component: AppComponent }, // Ajuste o componente conforme o necessário
+];
 
-export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]
-};
+export const appConfig = [
+  provideRouter(routes)
+];
